@@ -5,7 +5,7 @@ const AuthController = require('../controllers/AuthController');
 const { loginValidation, registerValidations } = require('../middlewares/validators');
 const { checkErrors } = require('../middlewares/checkError');
 
-const { validateJWT } = require('../middlewares/validateJWT');
+const { validateJWT } = require('../middlewares/validatejwt');
 
 
 

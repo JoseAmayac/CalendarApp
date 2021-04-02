@@ -73,6 +73,7 @@ const register = async (req = request, res = response)=>{
             token
         });
     } catch (error) {
+        console.log(error);
         return res.status(500).json({
             ok: false,
             message: "Error en el servidor, por favor intente más tarde"

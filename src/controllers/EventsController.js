@@ -86,7 +86,6 @@ const deleteEvent = async (req, res)=>{
 
     try {
         const event = await Event.findById( id );
-
         if (!event) {
             return res.status(404).json({
                 ok: false,
@@ -100,13 +99,11 @@ const deleteEvent = async (req, res)=>{
                 message: "No tiene privilegios para eliminar este evento"
             });
         }
+        event.delete();
 
-        const deleted = await Event.findByIdAndDelete( id );
-
-        return res.staus(200).json({
+        return res.status(200).json({
             ok: true,
-            message: "Evento eliminado correctamente",
-            event: deleted
+            message: "Evento eliminado correctamente"
         });
         
     } catch (error) {

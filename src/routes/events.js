@@ -6,7 +6,7 @@ const { validateJWT } = require('../middlewares/validatejwt');
 const { eventValidations } = require('../middlewares/validators');
 const { checkErrors } = require('../middlewares/checkError');
 
-router.use( validateJWT() );
+router.use( validateJWT );
 
 router.get('/', EventsController.getEvents);
 router.post('/', [ eventValidations, checkErrors ],  EventsController.createEvent);
